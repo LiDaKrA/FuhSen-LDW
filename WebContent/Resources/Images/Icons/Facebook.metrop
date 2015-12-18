@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Facebook">
+  <Icon Name="Facebook" HasCharacterMap="false" Data="F1M-1775.32,-68.9708L-1831.47,-68.9708C-1833.27,-68.9708,-1834.73,-67.3745,-1834.73,-65.4058L-1834.73,-10.1649C-1834.73,-8.19482,-1833.27,-6.59973,-1831.47,-6.59973L-1802.47,-6.59973 -1802.47,-32.2261 -1809.5,-32.2261 -1809.5,-40.5503 -1802.47,-40.5503 -1802.47,-45.5282C-1802.47,-50.9435,-1798.08,-55.3315,-1792.66,-55.3315L-1783.74,-55.3315 -1783.74,-47.0099 -1787.86,-47.0099C-1789.89,-47.0099,-1791.53,-45.3667,-1791.53,-43.3407L-1791.53,-40.5503 -1783.74,-40.5503 -1783.74,-32.2261 -1791.53,-32.2261 -1791.53,-6.59973 -1775.32,-6.59973C-1773.52,-6.59973,-1772.06,-8.19482,-1772.06,-10.1649L-1772.06,-65.4058C-1772.06,-67.3745,-1773.52,-68.9708,-1775.32,-68.9708" IsDirty="false" GroupName="Brand Identity" ExportCommand="MetroGraphicsPackage.IconCommand">
+    <Settings MainWidth="256" MainHeight="256" FlipX="1" FlipY="1" CustomSize="256" IconShape="Square" BackgroundBrush="#FFEA700D" ContentWidth="138" ContentHeight="138" Angle="0" SizeIndex="6" Padding="59" MaximumPadding="79" IconBrush="#FFFFFFFF" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>

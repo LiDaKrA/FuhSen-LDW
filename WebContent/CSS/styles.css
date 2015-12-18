@@ -1,0 +1,465 @@
+.user{
+	color:black !Important;
+
+	
+}
+.mainDiv{
+  border-top-width:thin;
+  border-top-style:solid;
+  border-color:#F1784B;
+  text-align: center;
+  position: fixed;
+  left: 2%;
+  top: 90px;
+  width: 95%;
+}
+.tableDistribution{
+  width: 100%;
+  text-align: center;
+	
+}
+
+.userOptionsIcon{
+	position:fixed;
+	width:15px;
+	height:15px;
+	right: 106px;
+  	top: 32px;
+}
+
+.homeImage{
+	position:relative;
+	width:340px;
+	height:70px;
+	left: 2%;
+  	top: 5%;
+	
+}
+
+.searchImage{
+	  height: 22px;
+}
+
+.SearchDataDiv{
+	
+  
+    height:52%;
+    float: left;
+
+    text-align: left;
+     
+}
+
+.SearchDataDiv{
+    width: 69%;
+    position: relative;
+}
+
+  .SearchDataDivLidakra{
+  	width: 100%;
+ 	text-align: center;
+ }
+
+
+.Title{
+  font-size: 40px;
+  left: 14%;
+  position: relative;
+  top: 12px;
+  color: #F1784B;
+}
+	
+}
+
+
+.wrapper {
+	height: 100%;
+	margin: 0px auto;
+/* 	overflow: hidden; */
+}
+
+.ebayImage{
+	height: 75px;
+	width: 75px;
+}
+
+body, html {
+	height: 100%;
+	overflow: hidden;
+}
+
+.navigation_buttom{
+	border: hidden;
+	background-color: white;
+	color: #F1784B;
+	text-align: center;
+	font-size: large;
+	font: bold;
+	cursor: pointer;
+	position: fixed;
+  	right: 10%;
+  	top: 25px;
+}
+
+
+.CleanDS_buttom{
+	
+	border: hidden;
+	background-color: white;
+	color: #F1784B;
+	text-align: center;
+	font-size: large;
+	font: bold;
+	cursor: pointer;
+	position: fixed;
+  	right: 10%;
+  	top: 55px;
+}
+.navigation_buttom:HOVER{
+/* 	background-color: Gray; */
+}
+.main_div {
+  
+	display: table-cell; 
+	text-align: center; 
+	vertical-align: middle;
+	height: 100%;
+}
+.search_div {
+/* 	overflow-y:scroll; */
+    text-align: center;
+/*     border-color: black; */
+/*     border-bottom: groove; */
+    border-width: 10px;
+    height: 100%;
+}
+
+
+.fuseki_div h3{
+
+	font-size: x-large;
+	
+}
+.loading_container {
+	text-align: center;
+	height: 35%;
+    position: relative;
+	top: 150px;
+}
+
+
+.RequestTable{
+	width: 90%;
+	border-style: hidden;
+	height: 12%;
+	border-spacing: 0px;
+	
+}
+.RequestTable th{
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-top-style: solid;
+	border-color:	lightgrey;
+	border-width:medium;
+	
+}
+.RequestTable tr{
+	height:	45px;
+}
+
+tr.record{
+	background-color: white;
+	text-align: center;
+}
+
+
+.RequestTable tr.record:HOVER{
+	
+	background-color: silver;
+	cursor:pointer;
+	
+}
+
+.RequestTable td{
+	border-style: hidden;
+}
+
+.GoogleAPI_div {
+	overflow:scroll;
+    background-color:white;
+/*     text-align: center; */
+    width: 50%;
+    height:52%;
+    float: left;
+}
+
+.ebayAPI_div {
+  	overflow:scroll;
+    background-color:white;
+/*     text-align: center; */
+    width: 50%;
+    height:52%;
+    float: right;      
+}
+
+
+.ProcessDataDiv{
+	  height: 1000px;
+	  
+}
+
+.DetailsDataDiv{
+	
+    width: 30%;
+    height:52%;
+    float: left;
+    border-right-color: #F1784B;
+    border-right-width: thin;
+    border-right-style: solid;
+    text-align: left;
+     
+}
+
+
+
+.SearchGooglePlusDiv{
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	text-align: center
+
+}
+.SearcheBayDiv{
+	height: 100%;
+	text-align: center
+}
+.CompleteProfileDiv{
+	height: 100%;
+	
+}
+
+.ProfileUpDiv{
+	height: 50%;
+}
+.ProfileDownDiv{
+	height: 50%;
+}
+.ProfileUpPictureDiv{
+	height: 50%;
+  	width: 50%;
+  	float: left;
+  	text-align: center;
+}
+
+.ProfilePersonalInfoDiv{
+	width: 100%;
+	Height: 90%;
+	  overflow: overlay;
+
+}
+
+.ProfileLinksDiv{
+	width: 100%;
+	Height: 10%;
+}
+.ProfileUpInfoDiv{
+	height: 100%;
+  	width: 50%;
+  	float: right;
+}
+.DetailsLabel{
+	    float: left; 
+	font-weight: bolder;
+}
+textarea{
+	resize: none;
+	
+}
+.ResultsProfile {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  text-align: left;
+  overflow-y: overlay;
+  height: 650px;
+	
+}
+
+.ResultseBay{
+  position: relative;
+  width: 80%;
+  left: 10%;
+  text-align: left;
+  overflow-y: overlay;
+  height: 650px;
+	
+}
+
+.ResultTRProfiles{
+	
+	border-bottom: 1pt solid gray;
+}
+.resultsProfilesTable{
+	border-collapse: collapse;
+	width: 90%;
+	
+}
+.profilesTable,.eBayItemsTable{
+	
+	width: 100%;
+	table-layout: fixed;
+
+}
+.profilesTable,.eBayItemsTable{
+text-align: center;
+}
+
+.profilesContainer{
+  height: 60px;
+  width: 99%;
+  overflow-y: overlay;
+}
+.socialInfoTable{
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-collapse:collapse; 
+    
+}
+
+.socialInfoTable .resultsLidakraTab{
+	
+	background: white;
+}
+
+ .socialInfoTable .resultsLidakraTab:hover {
+       color: #F1784B;
+       cursor: pointer;
+ }
+
+.pictureItems{
+	height: 100px;
+}
+tr.RoweBayTable > td
+{
+  padding-bottom: 30px;
+}
+.eBayTableResults{
+	text-align: center;
+	
+}
+.infoProduct{
+	text-align:left; 
+	width: 100%;
+}
+
+.descriptioneBaySearch{
+	text-align: left;
+	padding-left: 85px;
+}
+
+.ProfileDownDivMenu1,.ProfileDownDivMenu2,.ProfileDownDivMenu3,.ProfileDownDivMenu4,.ProfileDownDivMenu5,.ProfileDownDivMenu6{
+/*   width: 510px; */
+  padding-left: 70px;
+  text-align: inherit;
+  width: 100%;
+  height: 90%;
+  z-index: 0;
+  position: absolute;
+  overflow: overlay;
+  
+}
+.SearchHeader{
+  height: 100px;
+  top: 30%;
+  position: relative;
+}
+
+
+.SearchTextBox{
+  position: relative;
+  top: 35%;
+  width: 462px;
+  height: 39px;
+  font-size: 20px;
+}
+.searchLidakra{
+	position: relative;
+    top: 37%;
+ }
+ 
+ .SearchTextBoxHeader{
+ 	
+	position: relative;
+   	width: 350px;
+  	height: 33px;
+  	font-size: 18px;
+  	left:38%
+}
+.searchLidakraHeader{
+	position: relative;
+	left: 38%;
+	top: 10px;
+  	width: 44px;
+ }
+ 
+ .DataTable{
+   width: 100%; 
+  text-align: center;
+  table-layout: fixed;
+  
+ }
+ .DataTable td{
+/*    width: 100%; */
+  	 
+ }
+ 
+
+ 
+  .filtersDivTD{
+  width: 20%;
+
+ }
+  .SearchDataDivTD{
+ width: 60%;
+ }
+  .DataSetsDivTD{
+ width: 20%;
+ }
+ 
+ .DataDiv{
+   	position: relative;
+ 	top: 33px;
+ }
+ .resultsLidakraDivMenu1,.resultsLidakraDivMenu2 {
+     height: 400px;
+    overflow-y: overlay;
+      border-top-width:thin;
+	  border-top-style:solid;
+	  border-color:gray;
+ }
+ 
+ .LabelTable{
+   font-weight: bold;
+   
+   }
+.classProfileName, .LabelNavigateProfiles{
+	 color: blue;
+	 text-decoration: underline;
+	 cursor: pointer;
+  }
+  
+  .LidakraDiv{
+    width: 90%;
+    height:52%;
+    float: left;
+    text-align: left;
+  
+  }
+  
+  .filtersDiv,.DataSourcesDiv{
+    height: 417px;
+    width: 100%;
+   	text-align: left;
+    }
+    

@@ -1,0 +1,178 @@
+@prefix :      <urn:fiddle:ontology#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix indl:  <http://www.science.uva.nl/research/sne/indl#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace#> .
+@prefix nml:   <http://schemas.ogf.org/nml/2013/05/base#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix novi:  <http://fp7-novi.eu/im.owl#> .
+
+:isServiceOf  a        owl:ObjectProperty ;
+        rdfs:domain    :Service ;
+        rdfs:label     "serves an infrastructure" ;
+        rdfs:range     :Infrastructure ;
+        owl:inverseOf  :hasService .
+
+:Service  a              owl:Class ;
+        rdfs:label       "Service" ;
+        rdfs:seeAlso     indl:Capability ;
+        rdfs:subClassOf  :Object .
+
+:administers  a        owl:ObjectProperty ;
+        rdfs:comment   "an organization (e.g. a federation member) administers its own infrastructure" ;
+        rdfs:domain    foaf:Organization ;
+        rdfs:label     "administers" ;
+        rdfs:range     :Infrastructure ;
+        owl:inverseOf  :isAdministeredBy .
+
+:FederationMember  a     owl:Class ;
+        rdfs:label       "member of a federation" ;
+        rdfs:subClassOf  foaf:Organization .
+
+:Component  a            owl:Class ;
+        rdfs:label       "Resource Component" ;
+        rdfs:subClassOf  :Resource .
+
+:partOfFederation  a   owl:ObjectProperty ;
+        rdfs:comment   "an organization can be part of a federation" ;
+        rdfs:domain    :FederationMember ;
+        rdfs:label     "is part of federation" ;
+        rdfs:range     :Federation ;
+        owl:inverseOf  :hasFederationMember .
+
+:Group  a                    owl:Class ;
+        rdfs:label           "Group" ;
+        rdfs:seeAlso         novi:Group ;
+        rdfs:subClassOf      :Object ;
+        owl:equivalentClass  nml:Group .
+
+:Infrastructure  a       owl:Class ;
+        rdfs:comment     "an infrastructure such as a testbed or cloud facility" ;
+        rdfs:label       "Infrastructure" ;
+        rdfs:seeAlso     novi:Platform ;
+        rdfs:subClassOf  :Group .
+
+:Resource  a             owl:Class ;
+        rdfs:label       "Resource" ;
+        rdfs:seeAlso     nml:NetworkObject ;
+        rdfs:subClassOf  :Object .
+
+:Object  a                   owl:Class ;
+        rdfs:label           "ICT Object" ;
+        owl:equivalentClass  nml:NetworkObject .
+
+:requiredBy  a         owl:ObjectProperty ;
+        rdfs:domain    :Object ;
+        rdfs:label     "is required by an ICT object" ;
+        rdfs:range     :Object ;
+        owl:inverseOf  :requires .
+
+:Attribute  a       owl:Class ;
+        rdfs:label  "Attribute" .
+
+<urn:fiddle:ontology>
+        a                owl:Ontology ;
+        dc:creator       <http://alex.willner.ws/about#me> ;
+        dc:date          "2014-12-18"^^xsd:string ;
+        dc:title         "Open-Multinet Upper Ontology"^^xsd:string ;
+        dcterms:license  <http://creativecommons.org/licenses/by/4.0/> ;
+        owl:versionInfo  "2014-12-18"^^xsd:string .
+
+:isAdministeredBy  a  owl:ObjectProperty ;
+        rdfs:comment  "an infrastructure can be administered by an organization (e.g. a federation member)" ;
+        rdfs:domain   :Infrastructure ;
+        rdfs:label    "is administered by" ;
+        rdfs:range    foaf:Organization .
+
+:VirtualResource  a          owl:Class ;
+        rdfs:label           "Virtual Resource" ;
+        rdfs:subClassOf      :Resource ;
+        owl:equivalentClass  indl:VirtualNode .
+
+:implementedBy  a     owl:ObjectProperty ;
+        rdfs:domain   [ a            owl:Class ;
+                        owl:unionOf  ( :Service :VirtualResource )
+                      ] ;
+        rdfs:label    "is implemented by" ;
+        rdfs:range    :Resource ;
+        rdfs:seeAlso  novi:implementedBy .
+
+:implements  a         owl:ObjectProperty ;
+        rdfs:domain    :Resource ;
+        rdfs:label     "implements" ;
+        rdfs:range     [ a            owl:Class ;
+                         owl:unionOf  ( :Service :VirtualResource )
+                       ] ;
+        rdfs:seeAlso   indl:implements , novi:implements ;
+        owl:inverseOf  :implementedBy .
+
+:componentOf  a        owl:ObjectProperty ;
+        rdfs:domain    :Component ;
+        rdfs:label     "is component of a resource" ;
+        rdfs:range     :Resource ;
+        owl:inverseOf  :hasComponent .
+
+:isAttributeOf  a      owl:ObjectProperty ;
+        rdfs:domain    :Attribute ;
+        rdfs:label     "is attribute of" ;
+        rdfs:range     :Object ;
+        owl:inverseOf  :hasAttribute .
+
+:hasAttribute  a     owl:ObjectProperty ;
+        rdfs:domain  :Object ;
+        rdfs:label   "has attribute" ;
+        rdfs:range   :Attribute .
+
+:hasResource  a        owl:ObjectProperty ;
+        rdfs:domain    :Infrastructure ;
+        rdfs:label     "has resource" ;
+        rdfs:range     :Resource ;
+        rdfs:seeAlso   novi:contains ;
+        owl:inverseOf  :resourceOf .
+
+:hasEndpoint  a      owl:DatatypeProperty ;
+        rdfs:domain  novi:Service ;
+        rdfs:range   xsd:anyURI .
+
+:hasComponent  a      owl:ObjectProperty ;
+        rdfs:domain   :Resource ;
+        rdfs:label    "has resource component" ;
+        rdfs:range    :Component ;
+        rdfs:seeAlso  novi:hasComponent .
+
+:hasGroup  a          owl:ObjectProperty ;
+        rdfs:domain   :Group ;
+        rdfs:label    "has group" ;
+        rdfs:range    :Group ;
+        rdfs:seeAlso  nml:hasTypology .
+
+:Federation  a           owl:Class ;
+        rdfs:label       "Federation" ;
+        rdfs:subClassOf  foaf:Organization .
+
+:hasService  a       owl:ObjectProperty ;
+        rdfs:domain  :Infrastructure ;
+        rdfs:label   "has service" ;
+        rdfs:range   :Service .
+
+:hasFederationMember  a  owl:ObjectProperty ;
+        rdfs:comment  "a federation can have an organization as a member" ;
+        rdfs:domain   :Federation ;
+        rdfs:label    "has federation member" ;
+        rdfs:range    :FederationMember .
+
+:resourceOf  a       owl:ObjectProperty ;
+        rdfs:domain  :Resource ;
+        rdfs:label   "is resource of an infrastructure" ;
+        rdfs:range   :Infrastructure .
+
+:requires  a           owl:ObjectProperty ;
+        rdfs:domain    :Object ;
+        rdfs:label     "requires an ICT object" ;
+        rdfs:range     :Object ;
+        owl:inverseOf  :requiredBy .

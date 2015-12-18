@@ -1,0 +1,244 @@
+Prefix: : <http://iais.fraunhofer.de/ok/lidakra/common_entities#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: omv: <http://omv.ontoware.org/2005/05/ontology#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: foaf: <http://xmlns.com/foaf/0.1/>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix: org: <http://www.w3.org/ns/org#>
+Prefix: gr: <http://purl.org/goodrelations/v1#>
+
+Ontology: <http://iais.fraunhofer.de/ok/lidakra/common_entities#>
+
+Annotations: 
+    rdfs:comment "Vokabular für das Linked-Data-basierte Kriminalanalyse"@de,
+    omv:hasFormalityLevel <http://omv.ontoware.org/2005/05/ontology#Vocabulary>,
+    owl:versionInfo "0.1"
+
+AnnotationProperty: omv:hasFormalityLevel  
+AnnotationProperty: owl:versionInfo   
+AnnotationProperty: rdfs:label   
+AnnotationProperty: rdfs:comment
+    
+Datatype: xsd:string
+Datatype: xsd:date
+    
+Datatype: rdf:PlainLiteral
+
+Import: <http://xmlns.com/foaf/0.1/>
+Import: <http://www.w3.org/2004/02/skos/core>
+Import: <http://www.w3.org/ns/org#>
+Import: <http://purl.org/goodrelations/v1>
+
+#-------------------------------------------------------------
+# Agent is the base class for foaf:Person and org:Organization 
+#-------------------------------------------------------------
+
+Class: foaf:Agent
+
+DataProperty: address
+    Annotations: 
+        rdfs:label "Address"@en,
+        rdfs:label "Address"@de,   
+		rdfs:comment "Represent the agent current address"@en
+    Domain: 
+        foaf:Agent
+    Range: 
+        xsd:string
+
+DataProperty: email
+    Annotations: 
+        rdfs:label "Email"@en,
+        rdfs:label "Email"@de,
+		rdfs:comment "Agent's email"@en		
+    Domain: 
+        foaf:Agent
+    Range: 
+        xsd:string
+
+DataProperty: foaf:gender
+	Annotations: 
+		rdfs:label "gender"@en,
+        rdfs:label "Geschlecht"@de
+
+DataProperty: foaf:birthday
+	Annotations: 
+		rdfs:label "birth date"@en,
+        rdfs:label "Geburtsdatum"@de
+
+DataProperty: foaf:age
+	Annotations: 
+		rdfs:label "Age"@en,
+        rdfs:label "Age"@de
+
+DataProperty: foaf:account
+	Annotations: 
+		rdfs:label "Social network account"@en,
+        rdfs:label "Social network account"@de,
+		rdfs:comment "The account of this person in social networks"@en
+
+DataProperty: phone
+    Annotations: 
+        rdfs:label "Phone"@en,
+        rdfs:label "Phone"@de    
+    Domain: 
+        foaf:Agent
+    Range: 
+        xsd:string
+
+		
+#------------------------------------------
+# Person 
+#------------------------------------------
+
+Class: foaf:Person
+
+DataProperty: foaf:familyName
+	Annotations: 
+		rdfs:label "family name"@en,
+        rdfs:label "Nachname"@de
+		
+DataProperty: foaf:firstName
+	Annotations: 
+		rdfs:label "given name"@en,
+        rdfs:label "Vorname"@de
+
+#DataProperty: foaf:img
+#	Annotations: 
+#		rdfs:label "Picture"@en,
+#        rdfs:label "Picture"@de
+		
+DataProperty: livedAt
+    Annotations: 
+        rdfs:label "Location where the person has lived before"@en,
+        rdfs:label "Lived Place"@en    
+    Domain: 
+        foaf:Person
+    Range: 
+        xsd:string
+
+DataProperty: nationality
+    Annotations: 
+        rdfs:label "nationality"@en,
+        rdfs:label "Nationalität"@de    
+    Domain: 
+        foaf:Person
+    Range: 
+        xsd:string
+
+DataProperty: occupation
+    Annotations: 
+        rdfs:label "Person's occupation"@en,
+        rdfs:label "Occupation"@de    
+    Domain: 
+        foaf:Person
+    Range: 
+        xsd:string
+
+DataProperty: studiedAt
+    Annotations: 
+        rdfs:label "studied at"@en,
+        rdfs:label "studied at"@de,
+		rdfs:comment "Organization where the person studied"@en		
+    Domain: 
+        foaf:Person
+    Range: 
+        xsd:string
+
+DataProperty: workedAt
+    Annotations: 
+        rdfs:label "worked at"@en,
+        rdfs:label "worked at"@de,
+		rdfs:comment "Organization where the person worked before"@en		
+    Domain: 
+        foaf:Person
+    Range: 
+        xsd:string
+		
+#------------------------------------------
+# Organization 
+#------------------------------------------
+
+Class: org:Organization
+
+DataProperty: foaf:img
+	Annotations: 
+		rdfs:label "Picture"@en,
+        rdfs:label "Picture"@de
+	Domain: 
+        org:Organization
+
+DataProperty: skos:prefLabel
+    Annotations: 
+        rdfs:label "Organization's legal name"@en,
+        rdfs:label "Name"@de    
+    Domain: 
+        org:Organization
+    Range: 
+        xsd:string
+
+DataProperty: skos:altLabel
+    Annotations: 
+        rdfs:label "Organization's legal name"@en,
+        rdfs:label "Name"@de    
+    Domain: 
+        org:Organization
+    Range: 
+        xsd:string
+		
+DataProperty: website
+    Annotations: 
+        rdfs:label "Website"@en,
+        rdfs:label "Website"@de    
+    Domain: 
+        org:Organization
+    Range: 
+        xsd:string
+
+#------------------------------------------
+# Product 
+#------------------------------------------
+
+Class: gr:ProductOrService
+    Annotations: 
+        rdfs:comment "Anything that can be offered to a market that might satisfy a want or need"@en
+
+DataProperty: foaf:img
+	Annotations: 
+		rdfs:label "Picture"@en,
+        rdfs:label "Picture"@de
+	Domain: 
+        gr:ProductOrService
+		
+DataProperty: gr:description
+    Annotations: 
+        rdfs:label "decription"@de
+
+DataProperty: gr:condition
+    Annotations: 
+        rdfs:label "condition"@de
+
+DataProperty: gr:name
+    Annotations: 
+        rdfs:label "name"@de
+		
+DataProperty: location
+    Annotations: 
+        rdfs:label "Product's location"@en,
+        rdfs:label "Location"@en    
+    Domain: 
+        gr:ProductOrService
+    Range: 
+        xsd:string
+
+DataProperty: price
+    Annotations: 
+        rdfs:label "Product's price"@en,
+        rdfs:label "Price"@en    
+    Domain: 
+        gr:ProductOrService
+    Range: 
+        xsd:string
