@@ -1,2 +1,2 @@
-# FuhSen-ldw
+# FuhSen-ldw [![Build Status](https://travis-ci.org/LiDaKrA/FuhSen-ldw.svg?branch=master)](https://travis-ci.org/LiDaKrA/FuhSen-ldw)
 FuhSen Wrappers Layer, this project contains the source code of generic REST, SPARQL and SQL wrappers.
