@@ -1,10 +1,3 @@
 language: java
 before_install:
     - mvn validate
-deploy:
-  provider: releases
-  api_key:
-    secure: YNk4V9ULkxoXEMgtr443jgeHyjKU8i6I851E9d3g2zLU3vm6BNMhA3SaXaMgfOfqOcL17Gj64YJDFCu5HeEBb7CxePJWNlIJhhCsd+h/x0Lo1f2SzI42sCaJA0B7qNhA7WmQShHnKi2/WTiKutzMjRDcvyMSZfRCnRVJ6l5P+1QVernGHesGZeCOOtn8jYqcS52kIJ5v/1R+FZBuH9HaZrhSvhJ1hbkF8LkUNTgc+BAf0qNDap9IRZQjq38dJQcHjLypggC6aSdU/gcAN7yQVqrxgeMZlenmTU9HucG094nuzB9eTniCtWAeuvRx9aY7oFBFgSoh38G8qUTVp9cCZBx7jLp82M99zbRt/dEZSTepYsqXBDab9jgKmZBGmheVtwX82LNJczTGnqWei1IsVIL5czDs+owWd01x5tI8gaqEeQdLP13LAHS/0Q/LkRrQ90Sju63rCxr/QNeUdE0cABklYDv3JA78ShKffRxtyJvh4sj2OGP4rKgGAWOehi7X3haoTZh9EyO+qRSX8ByuP4VqcPI3LNYfUwQ0Q8mWa4wURzw4GORYajrZK7oyQx9DVDMpw1HEYFF6DEPpydyTN/sHucfkOpFjGL3AnIQv9E7p4HJbU849bJAZwBWNHQU0Ihy6QIBvHeZWdlKmOynGj5Wq0dwYRrCC/64tDpAiZ2w=
-  file: ''
-  on:
-    repo: LiDaKrA/FuhSen-ldw
