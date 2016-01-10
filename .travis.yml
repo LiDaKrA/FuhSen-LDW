@@ -1,4 +1,7 @@
 language: java
+before_install:
+    - wget -P libraries/ https://github.com/LiDaKrA/FuhSen-ldw/blob/master/libraries/finding.jar
+    - mvn validate
 deploy:
   provider: releases
   api_key:
